@@ -21,6 +21,8 @@ The requirements for the system, as stated by the client are:
 
 **Hint**: Before writing any code, write out all desired tables in the data model and determine all relationships between tables. 
 
+
+
 ### Migrations and Seeds
 
 - Write a migration file that creates all tables necessary to model this data
