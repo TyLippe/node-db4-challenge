@@ -12,14 +12,14 @@ function getRecipes() {
 
 function getShoppingList(recipe_id) {
     return db('recipes as r')
-        .innerJoin('ingredients as i', 'r.id', 'u.recipe_id')
-        .where({ recipe_id: id })
-        .select('i.contents as shopping list')
+        .innerJoin('ingredients as i', 'r.id', 'i.recipe_id')
+        .where({ recipe_id })
+        .select('i.ingredient_name as shopping list', 'i.quantity as amount')
 }
 
 function getInstructions(recipe_id) {
     return db('recipes as r')
         .innerJoin('steps as s', 'r.id', 's.recipe_id')
-        .where({ recipe_id: id })
-        .select('s.contents as steps')
+        .where({ recipe_id })
+        .select('s.instructions as steps')
 }
